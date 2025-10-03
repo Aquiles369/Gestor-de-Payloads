@@ -10,11 +10,12 @@
 
 <picture> <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">  </picture>
 
- ### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2VscGV1NWIzZG81aTV1Yjhmd3V2OHA1cXlneHNsMmk0dWFjcGg5MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9dHM/Dv8Klv7asiQFXRjSp9/giphy.gif" width = 75px>  </picture> Colab Bug bounty
+ ### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2VscGV1NWIzZG81aTV1Yjhmd3V2OHA1cXlneHNsMmk0dWFjcGg5MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9dHM/Dv8Klv7asiQFXRjSp9/giphy.gif" width = 75px>  </picture> Gestor de cargas útiles
 
 <br>
 
- **Herramienta ligera .html para equipos de bug bounty: registra informes, filtra por ID, personaliza columnas y filas, colabora exportando/importando JSON o CSV, y guarda todo en localStorage para evitar dependencias. Ideal para compartir con un compañero, llevar el histórico local y organizar triage y pagos de bounty sin complicaciones. ¡Perfecta para labs y para cuando quieres orden entre el caos de reports!,<a href="https://youtu.be/-xbUK4-LGUw" target="_blank" rel="noopener">demo de la tool Youtube</a>.** 
+ **Repositorio de Payloads — gestor offline con filtros y notas. Una tool offline para gestionar payloads de bug bounty.
+Permite crear categorías personalizadas (XSS, IDOR, RCE, etc.), agregar renglones con payloads, asignarles un estado (muy bueno, bueno, medio, débil), añadir notas con tooltip, copiar ítems o listas completas y buscar en todo el repositorio. Todo queda guardado en localStorage, con funciones para exportar/importar JSON y borrar todo.,<a href="https://youtu.be/-xbUK4-LGUw" target="_blank" rel="noopener">demo de la tool Youtube</a>.** 
 <br><br> 
 
 <p align="center">
@@ -29,7 +30,7 @@
 ### <picture> <img src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjFnMzNrdnpobWpoNXk1M2d4Mm13MTU3aHp3ODNoN2dqcDlxNm13cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/QBedtJmJYwbXMbDUEf/giphy.gif" width = 80px>  </picture> Resumen rápido
 <br><br>
 
-Un sencillo dashboard .html para colaboración en bug bounty: buscador por ID, edición en CRUD (añadir/editar/borrar filas y columnas), selección masiva, export/import y guardado en localStorage para compartir y trabajar en equipo sin dramas.<br>
+Tool offline en el navegador para gestionar payloads de bug bounty. Sin instalar nada: abrís el HTML y ya podés crear, editar o eliminar categorías, agregar renglones con payloads, asignar estados (muy bueno/bueno/medio/débil), filtrar, anotar y copiar. Todo queda guardado en localStorage; también podés exportar/importar JSON o resetear.<br>
 
 
 • Formato: interfaz web local (HTML/JS), toda la data se guarda en localStorage por defecto (offline, en tu máquina).<br><br>
@@ -41,29 +42,80 @@ Un sencillo dashboard .html para colaboración en bug bounty: buscador por ID, e
 ### <picture> <img src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExemxiY2czNWdld2w0a3lwODRudTF6dDc3Z3FqNmZ6Mzcyd2lmZTd6cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/N8L2MCh9bCpu1BjF3V/giphy.gif" width = 80px>  </picture> Características
 <br><br>
 
+Categorías dinámicas:
 
-• Buscador por ID de informe (buscar rápido usando el ID del reporte).
+• Crear, renombrar y eliminar categorías.
 
-• Añadir / eliminar filas (incluye “eliminar última fila”).
+• Cada categoría muestra la cantidad de payloads que contiene.
 
-• Añadir / eliminar columnas (puedes crear columnas personalizadas al vuelo).
+• Cada categoría trae su filtro propio: todos, sin etiqueta, muy bueno, bueno, medio, débil. <br>
 
-• Editar celdas (modificar cualquier dato del informe).
+Gestión de payloads (renglones):
+Cada renglón tiene:<br>
 
-• Selección múltiple con checkboxes (borrar/editar varias filas a la vez).
+• Título editable (Nuevo payload por defecto).
 
-• Exportar / Importar (JSON/CSV — para compartir con colegas).
+• Campo de texto para payload.
 
-• Persistencia local: todo se guarda en localStorage (offline y rápido).
+• Botón Copiar al portapapeles.
 
-• Indicador visual en Notas: icono/círculo rojo si hay contenido en notas.
+• Píldora de estado (muy bueno / bueno / medio / débil / sin etiqueta).
 
-• Tabla principal: 10 columnas predefinidas (ver abajo).
+• Notas: modal para editar y guardar; tooltip flotante con preview y fecha de última edición; indicador rojo si existe nota.
 
-• Estados con colores para severidad y triage (visual rápido).
+• Botón Borrar para eliminar el payload.<br>
 
-• Interfaz colaborativa simple: compartir el archivo .html + JSON y listo.
 
+Funciones por categoría
+
+• Agregar renglón.
+
+• Copiar TODOS los payloads de la categoría (respeta el filtro activo
+
+• Eliminar categoría completa.<br>
+
+Buscador global
+
+• Panel lateral fijo.
+
+• Filtra por título, payload, nota o categoría.
+
+• Resalta y lleva al payload con scroll suave.<br>
+
+
+Botonera de control (fija en pantalla)
+
+• + Agregar categoría.
+
+• Exportar JSON (copiar base al portapapeles).
+
+• Importar JSON (pegar desde clipboard).
+
+• Borrar todo (reset total).<br>
+
+Persistencia local
+
+• Todo se guarda automáticamente en localStorage.
+
+• Funciona 100% offline, sin servidor ni backend.<br>
+
+
+Interfaz visual
+
+• Fondo oscuro con gradientes.
+
+• Tarjetas y secciones con glassmorphism (bordes, sombras, blur).<br>
+
+
+Estados representados por colores claros:
+
+• Verde = Muy bueno
+
+• Azul = Bueno
+
+• Naranja = Medio
+
+• Gris = Débil
 
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
@@ -72,28 +124,19 @@ Un sencillo dashboard .html para colaboración en bug bounty: buscador por ID, e
 <br><br>
 
 
-• Título / Nombre del reporte — Título breve del hallazgo.
+1. Abrí el archivo .html en tu navegador.
 
-• ID de informe — ID único que permite buscar.
+2. Clic en + Agregar categoría y empezá a crear/renombrar/eliminar.
 
-• Fecha de reporte — fecha cuando se reportó.
+3. Dentro de cada categoría: Agregar renglón → escribir payload → asignar estado.
 
-• Encontrado por — nombre del que lo encontró (hunter).
+4. Usá el filtro por estado o el buscador global para encontrar todo al toque.
 
-• Reportado por — quién envió el informe (puede coincidir).
+5. Opcional: Notas (tooltip + última edición), Copiar ítem o Copiar TODOS de la categoría.
 
-• Severidad / Estado del informe — Critical (rojo), High (naranja), Medium (amarillo), Low (verde), Info (gris).
+6. Cualquiera puede usarla: es simple, rápida y todo queda local.
 
-• Triage / Estado de gestión — triage (verde), resolver (azul), dupe (violeta), auto-close (gris), pendiente (amarillo), pelear (marrón) — colores para cada estado.
 
-• Bounty — Aquiles — campo para poner el nombre de quien recibió el bounty (o etiqueta).
-
-• Bounty — Mi parte / Bounty cobrado — valor o porcentaje que corresponde a la parte del informe; también un campo “bounty pagado total”.
-
-• Notas — campo tipo blog/texto largo; muestra un indicador rojo si tiene contenido.
-
-Mini-resumen / pitch (para README o explicación rápida)
- 
  <br>
 
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
