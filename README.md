@@ -10,7 +10,7 @@
 
 <picture> <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">  </picture>
 
- ### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2VscGV1NWIzZG81aTV1Yjhmd3V2OHA1cXlneHNsMmk0dWFjcGg5MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9dHM/Dv8Klv7asiQFXRjSp9/giphy.gif" width = 75px>  </picture> Gestor de cargas útiles
+ ### <picture> <img src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2w3cm4zMzBnc2QxMDE2cXhseGdvYzZ5OTVrcjh1Ymkzd2s1OWtnaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Q7cYJsVRUjRgwq6yEc/giphy.gif" width = 75px>  </picture> Gestor de cargas útiles
 
 <br>
 
