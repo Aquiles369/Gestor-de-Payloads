@@ -572,7 +572,7 @@
 
   document.getElementById('addCat').addEventListener('click', addCategory);
 
-  // ====== Notas (modal) ======
+  // ====== Notas (modal) — FIX: handlers completos ======
   const $modal = document.getElementById('modal');
   const $noteArea = document.getElementById('noteArea');
   const $metaInfo = document.getElementById('metaInfo');
@@ -593,8 +593,37 @@
     $metaInfo.textContent = item.editedTs ? ('Última edición: ' + new Date(item.editedTs).toLocaleString()) : '—';
     $modal.classList.add('open');
     hideTip();
+    // foco al textarea
+    setTimeout(()=>{
+      $noteArea.focus();
+      const len = $noteArea.value.length;
+      $noteArea.setSelectionRange(len, len);
+    }, 0);
   }
   function closeNote(){ $modal.classList.remove('open'); }
+
+  // Guardar / Borrar / Cerrar
+  $saveNote.addEventListener('click', ()=>{
+    const {item} = getCI(active.catId, active.itemId); if(!item) return;
+    item.note = $noteArea.value.trim();
+    item.editedTs = Date.now();
+    save(); closeNote(); render();
+  });
+  $clearNote.addEventListener('click', ()=>{
+    if(!confirm('¿Borrar nota?')) return;
+    const {item} = getCI(active.catId, active.itemId); if(!item) return;
+    item.note = ''; item.editedTs = 0; save(); closeNote(); render();
+  });
+  $close.addEventListener('click', closeNote);
+  // click en el fondo cierra
+  $modal.addEventListener('click', (e)=>{ if(e.target === $modal) closeNote(); });
+  // atajos de teclado dentro del modal
+  window.addEventListener('keydown', (e)=>{
+    if($modal.classList.contains('open')){
+      if(e.key === 'Escape'){ e.preventDefault(); closeNote(); }
+      if(e.ctrlKey && e.key.toLowerCase() === 's'){ e.preventDefault(); $saveNote.click(); }
+    }
+  });
 
   // ====== Carga masiva ======
   const $bulkModal = document.getElementById('bulkModal');
@@ -630,7 +659,7 @@
     if($bulkTrimEmpty.checked){ lines = lines.map(l=>l.trim()).filter(l=>l.length>0); }
     if(!lines.length){ alert('No hay líneas para importar.'); return; }
 
-    const MAX_CREATE = 5000; // safety — no nos vamos a DDoSear el DOM
+    const MAX_CREATE = 5000; // safety
     const toCreate = lines.slice(0, MAX_CREATE);
 
     toCreate.forEach((payload, idx)=>{
