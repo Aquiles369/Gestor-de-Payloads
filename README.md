@@ -48,7 +48,8 @@ Categorías dinámicas:
 
 • Cada categoría muestra la cantidad de payloads que contiene.
 
-• Cada categoría trae su filtro propio: todos, sin etiqueta, muy bueno, bueno, medio, débil. <br>
+• Cada categoría trae su filtro propio: todos, sin etiqueta, muy bueno, bueno, medio, débil. <br><br>
+
 
 Gestión de payloads (renglones):
 Cada renglón tiene:<br>
@@ -63,16 +64,22 @@ Cada renglón tiene:<br>
 
 • Notas: modal para editar y guardar; tooltip flotante con preview y fecha de última edición; indicador rojo si existe nota.
 
-• Botón Borrar para eliminar el payload.<br>
+• Botón Borrar para eliminar el payload.<br><br>
 
 
 Funciones por categoría
 
 • Agregar renglón.
 
-• Copiar TODOS los payloads de la categoría (respeta el filtro activo
+• Copiar TODOS los payloads de la categoría (respeta el filtro activo).
 
-• Eliminar categoría completa.<br>
+• Podes crear automaticamente los relgones con lista de paylodad compleas uno debajo de otro.
+
+
+• Eliminar categoría completa.<br><br>
+
+
+
 
 Buscador global
 
@@ -80,7 +87,9 @@ Buscador global
 
 • Filtra por título, payload, nota o categoría.
 
-• Resalta y lleva al payload con scroll suave.<br>
+• Resalta y lleva al payload con scroll suave.<br><br>
+
+
 
 
 Botonera de control (fija en pantalla)
@@ -91,20 +100,25 @@ Botonera de control (fija en pantalla)
 
 • Importar JSON (pegar desde clipboard).
 
-• Borrar todo (reset total).<br>
+• Borrar todo (reset total).<br><br>
+
+
+
 
 Persistencia local
 
 • Todo se guarda automáticamente en localStorage.
 
-• Funciona 100% offline, sin servidor ni backend.<br>
+• Funciona 100% offline, sin servidor ni backend.<br><br>
+
 
 
 Interfaz visual
 
 • Fondo oscuro con gradientes.
 
-• Tarjetas y secciones con glassmorphism (bordes, sombras, blur).<br>
+• Tarjetas y secciones con glassmorphism (bordes, sombras, blur).<br><br>
+
 
 
 Estados representados por colores claros:
