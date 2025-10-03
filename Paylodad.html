@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="theme-color" content="#000000">
 <title>Repositorio de Payloads (XSS / IDOR / RCE …)</title>
-<link rel="icon" href="assets/fav_Aquiles.png" type="image/x-icon">
+<link rel="icon" href="fav_Aquiles.png" type="image/x-icon">
 <style>
   :root{
     --bg:#000000; --card:#141c5b; --ink:#e7ffeb; --muted:#9aa3ff;
@@ -15,7 +15,7 @@
   html,body{height:100%}
   body{
     margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;
-    background: var(--bg); /* negro puro */
+    background: var(--bg);
     color:var(--ink);
     display:grid; grid-template-columns:minmax(0,1fr); place-items:center; padding:24px;
   }
@@ -49,15 +49,13 @@
   .btn:active{transform: translateY(1px)}
   .ghost{background:transparent; color:var(--ink); border:1px solid rgba(255,255,255,.18)}
 
-  /* Filtros por categoría */
+  /* inputs & selects */
   .cfilters{display:flex; gap:8px; align-items:center; justify-self:stretch}
   .cfilter-input{
     width:100%; padding:8px 10px; border-radius:10px;
     background:rgba(255,255,255,.06); color:var(--ink);
     border:1px solid rgba(255,255,255,.14); font-weight:700; letter-spacing:.2px;
   }
-
-  /* === SELECT DARK BONITO === */
   .cfilter-select{
     padding:8px 36px 8px 10px; border-radius:10px; min-width:170px;
     background:#0b0d1f; color:var(--ink);
@@ -69,17 +67,8 @@
     background-position: right 12px top 55%, right 6px top 55%;
     background-size: 8px 8px, 8px 8px; background-repeat:no-repeat;
   }
-  .cfilter-select:focus-visible{outline:2px solid rgba(124,92,255,.6); outline-offset:2px}
-  /* Opciones del desplegable */
-  .cfilter-select option{
-    background:#141826; color:#e6ecff; font-weight:700;
-  }
+  .cfilter-select option{ background:#141826; color:#e6ecff; font-weight:700; }
   .cfilter-select option:checked{ background:#2b2f6b; color:#fff; }
-  .cfilter-select option[value="none"]{ color:#bfc8d6; }
-  .cfilter-select option[value="muyb"]{ color:#b6ffcc; }
-  .cfilter-select option[value="bueno"]{ color:#cfe2ff; }
-  .cfilter-select option[value="medio"]{ color:#ffe2b6; }
-  .cfilter-select option[value="debil"]{ color:#d7dbe3; }
 
   .items{display:grid; gap:8px; margin-top:10px}
   .item{
@@ -141,7 +130,7 @@
     border-radius:0 0 12px 12px;
   }
 
-  /* Modal de notas */
+  /* Modales (notas y carga masiva comparten estilos) */
   .modal{position:fixed; inset:0; display:none; place-items:center; background:rgba(0,0,0,.55); backdrop-filter: blur(2px)}
   .modal.open{display:grid}
   .modal .box{background:var(--card); border:1px solid rgba(255,255,255,.12); border-radius:20px; padding:22px; width:min(680px,100%)}
@@ -149,7 +138,7 @@
   .modal p{color:var(--muted)}
   .note-wrap{margin-top:10px}
   .note-wrap label{display:block; font-size:13px; color:var(--muted); margin-bottom:6px}
-  #noteArea{
+  #noteArea, #bulkArea{
     width:100%; min-height:180px; resize:vertical;
     background:rgba(255,255,255,.06); color:var(--ink);
     border:1px solid rgba(255,255,255,.14); border-radius:12px; padding:10px 12px;
@@ -206,7 +195,6 @@
       <p class="sub">Organizá tus payloads por <b>categoría</b> (XSS, IDOR, RCE, …). Todo persiste en <b>localStorage</b>. Filtros por estado y texto, notas con tooltip, copiar por renglón o toda la categoría.</p>
 
       <div id="cats"></div>
-      <!-- (botones movidos al aside) -->
     </section>
 
     <!-- Panel flotante -->
@@ -243,6 +231,29 @@
         <button id="saveNote" class="btn">Guardar (Ctrl+S)</button>
         <button id="clearNote" class="btn ghost">Borrar nota</button>
         <button id="close" class="btn ghost">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de CARGA MASIVA -->
+  <div id="bulkModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="bulk-title">
+    <div class="box">
+      <center><h2 id="bulk-title">Carga masiva de payloads</h2></center>
+      <center><p class="sub" style="margin:0 0 10px">Pegá <b>uno por línea</b>. Se crearán renglones automáticos.</p></center>
+      <div class="note-wrap">
+        <label for="bulkArea">Lista de payloads</label>
+        <textarea id="bulkArea" placeholder="Ejemplo:
+<img src=x onerror=alert(1)>
+</script><svg onload=confirm(1)>
+' OR 1=1 --"></textarea>
+        <div style="display:flex; gap:10px; align-items:center; margin-top:8px; color:var(--muted); font-size:12px">
+          <label><input id="bulkUseSnippet" type="checkbox" checked> Usar inicio del payload como título</label>
+          <label><input id="bulkTrimEmpty" type="checkbox" checked> Ignorar líneas vacías</label>
+        </div>
+      </div>
+      <div class="actions">
+        <button id="bulkCreate" class="btn">Crear renglones (Ctrl+Enter)</button>
+        <button id="bulkCancel" class="btn ghost">Cancelar</button>
       </div>
     </div>
   </div>
@@ -352,10 +363,11 @@
       // acciones
       const actions = document.createElement('div'); actions.className = 'cactions';
       const addItemBtn = btn('+ Agregar renglón', ()=> addItem(cat.id));
+      const bulkBtn    = btn('Carga masiva', ()=> openBulk(cat.id), false);
       const copyAllBtn = btn('Copiar TODOS los payloads', ()=> copyAll(cat.id), false);
       copyAllBtn.title = 'Respeta el filtro activo';
       const delCatBtn  = btn('Eliminar categoría', ()=> delCat(cat.id), true);
-      actions.append(addItemBtn, copyAllBtn, delCatBtn);
+      actions.append(addItemBtn, bulkBtn, copyAllBtn, delCatBtn);
 
       head.append(title, fwrap, actions);
       wrap.appendChild(head);
@@ -467,9 +479,6 @@
       menu.appendChild(li);
     };
     add(null,'Sin etiqueta','pill-none');
-    [{id:null,text:'Sin etiqueta',cls:'pill-none'}, ...STATUS_SET].forEach(s=>{
-      if(s.id===null) return; // ya se agregó arriba
-    });
     STATUS_SET.forEach(s=> add(s.id, s.text, s.cls));
     document.body.appendChild(menu);
 
@@ -586,30 +595,63 @@
     hideTip();
   }
   function closeNote(){ $modal.classList.remove('open'); }
-  function getCI(catId, itemId){
-    const cat = state.cats.find(c=>c.id===catId);
-    const item = cat ? cat.items.find(i=>i.id===itemId) : null;
-    return {cat, item};
+
+  // ====== Carga masiva ======
+  const $bulkModal = document.getElementById('bulkModal');
+  const $bulkArea = document.getElementById('bulkArea');
+  const $bulkUseSnippet = document.getElementById('bulkUseSnippet');
+  const $bulkTrimEmpty = document.getElementById('bulkTrimEmpty');
+  const $bulkCreate = document.getElementById('bulkCreate');
+  const $bulkCancel = document.getElementById('bulkCancel');
+  let bulkTargetCatId = null;
+
+  function openBulk(catId){
+    bulkTargetCatId = catId;
+    $bulkArea.value = '';
+    $bulkModal.classList.add('open');
+    setTimeout(()=> $bulkArea.focus(), 0);
   }
-  $saveNote.addEventListener('click', ()=>{
-    const {item} = getCI(active.catId, active.itemId); if(!item) return;
-    item.note = $noteArea.value.trim();
-    item.editedTs = Date.now();
-    save(); closeNote(); render();
-  });
-  $clearNote.addEventListener('click', ()=>{
-    if(!confirm('¿Borrar nota?')) return;
-    const {item} = getCI(active.catId, active.itemId); if(!item) return;
-    item.note = ''; item.editedTs = 0; save(); closeNote(); render();
-  });
-  $close.addEventListener('click', closeNote);
-  $modal.addEventListener('click', (e)=>{ if(e.target===$modal) closeNote(); });
+  function closeBulk(){
+    $bulkModal.classList.remove('open');
+    bulkTargetCatId = null;
+  }
+  $bulkCancel.addEventListener('click', closeBulk);
+  $bulkCreate.addEventListener('click', doBulkCreate);
   window.addEventListener('keydown', (e)=>{
-    if($modal.classList.contains('open')){
-      if(e.key==='Escape'){ e.preventDefault(); closeNote(); }
-      if(e.ctrlKey && e.key.toLowerCase()==='s'){ e.preventDefault(); $saveNote.click(); }
+    if($bulkModal.classList.contains('open') && e.ctrlKey && e.key.toLowerCase()==='enter'){
+      e.preventDefault(); doBulkCreate();
     }
   });
+
+  function doBulkCreate(){
+    const cat = state.cats.find(c=>c.id===bulkTargetCatId);
+    if(!cat){ closeBulk(); return; }
+    let lines = $bulkArea.value.replace(/\r/g,'\n').split('\n');
+    if($bulkTrimEmpty.checked){ lines = lines.map(l=>l.trim()).filter(l=>l.length>0); }
+    if(!lines.length){ alert('No hay líneas para importar.'); return; }
+
+    const MAX_CREATE = 5000; // safety — no nos vamos a DDoSear el DOM
+    const toCreate = lines.slice(0, MAX_CREATE);
+
+    toCreate.forEach((payload, idx)=>{
+      const title = $bulkUseSnippet.checked
+        ? (payload.replace(/\s+/g,' ').slice(0, 48) || `Payload ${idx+1}`)
+        : `Payload ${idx+1}`;
+      cat.items.push({
+        id: uid(),
+        title: title,
+        payload: payload,
+        note: '',
+        editedTs: 0,
+        status: null
+      });
+    });
+
+    save();
+    closeBulk();
+    render();
+    alert(`Creados ${toCreate.length} renglones en "${cat.title}".`);
+  }
 
   // ====== Export/Import/Wipe ======
   document.getElementById('export').addEventListener('click', ()=>{
