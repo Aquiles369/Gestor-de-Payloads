@@ -48,7 +48,7 @@ Categorías dinámicas:
 
 • Cada categoría muestra la cantidad de payloads que contiene.
 
-• Cada categoría trae su filtro propio: todos, sin etiqueta, muy bueno, bueno, medio, débil. <br><br>
+• Cada categoría trae su filtro propio: todos, sin etiqueta, muy bueno, bueno, medio, débil. <br><br><br>
 
 
 Gestión de payloads (renglones):
@@ -64,7 +64,7 @@ Cada renglón tiene:<br>
 
 • Notas: modal para editar y guardar; tooltip flotante con preview y fecha de última edición; indicador rojo si existe nota.
 
-• Botón Borrar para eliminar el payload.<br><br>
+• Botón Borrar para eliminar el payload.<br><br><br>
 
 
 Funciones por categoría
@@ -76,7 +76,7 @@ Funciones por categoría
 • Podes crear automaticamente los relgones con lista de paylodad compleas uno debajo de otro.
 
 
-• Eliminar categoría completa.<br><br>
+• Eliminar categoría completa.<br><br><br>
 
 
 
@@ -87,7 +87,7 @@ Buscador global
 
 • Filtra por título, payload, nota o categoría.
 
-• Resalta y lleva al payload con scroll suave.<br><br>
+• Resalta y lleva al payload con scroll suave.<br><br><br>
 
 
 
@@ -100,7 +100,7 @@ Botonera de control (fija en pantalla)
 
 • Importar JSON (pegar desde clipboard).
 
-• Borrar todo (reset total).<br><br>
+• Borrar todo (reset total).<br><br><br>
 
 
 
@@ -109,7 +109,7 @@ Persistencia local
 
 • Todo se guarda automáticamente en localStorage.
 
-• Funciona 100% offline, sin servidor ni backend.<br><br>
+• Funciona 100% offline, sin servidor ni backend.<br><br><br>
 
 
 
@@ -117,7 +117,7 @@ Interfaz visual
 
 • Fondo oscuro con gradientes.
 
-• Tarjetas y secciones con glassmorphism (bordes, sombras, blur).<br><br>
+• Tarjetas y secciones con glassmorphism (bordes, sombras, blur).<br><br><br>
 
 
 
