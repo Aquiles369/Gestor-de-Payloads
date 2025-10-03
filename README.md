@@ -27,7 +27,7 @@ Permite crear categorías personalizadas (XSS, IDOR, RCE, etc.), agregar renglon
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
-### <picture> <img src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjFnMzNrdnpobWpoNXk1M2d4Mm13MTU3aHp3ODNoN2dqcDlxNm13cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/QBedtJmJYwbXMbDUEf/giphy.gif" width = 80px>  </picture> Resumen rápido
+### <picture> <img src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTluamxsZ29hbTV2Zmw0OWNwN2cxMHI4azl1YTBvemYybW80eHRlZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/hvSd2YvTdBlniSJ8tA/giphy.gif" width = 80px>  </picture> Resumen rápido
 <br><br>
 
 Tool offline en el navegador para gestionar payloads de bug bounty. Sin instalar nada: abrís el HTML y ya podés crear, editar o eliminar categorías, agregar renglones con payloads, asignar estados (muy bueno/bueno/medio/débil), filtrar, anotar y copiar. Todo queda guardado en localStorage; también podés exportar/importar JSON o resetear.<br>
@@ -39,7 +39,7 @@ Tool offline en el navegador para gestionar payloads de bug bounty. Sin instalar
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
-### <picture> <img src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExemxiY2czNWdld2w0a3lwODRudTF6dDc3Z3FqNmZ6Mzcyd2lmZTd6cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/N8L2MCh9bCpu1BjF3V/giphy.gif" width = 80px>  </picture> Características
+### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWVleDk0Y3lmdmN1eWU3eWowNGsyaGlpbHQwbTM0aDNia21qbjNpayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/S3caeWZviAaDtzmU7X/giphy.gif" width = 80px>  </picture> Características
 <br><br>
 
 Categorías dinámicas:
@@ -120,7 +120,7 @@ Estados representados por colores claros:
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
-### <picture> <img src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExc28ycHl2NXQ2anBxNG1tc2p4ZWVmNmNoNDR5bnRzY3FzYmhnZmI4byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/YOzYceBDdYmcJS3dzw/giphy.gif" width = 80px>  </picture> Uso
+### <picture> <img src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExenRleDh2cXF1aG9mcjJnank0MzRoNHZoZDFiZ2Y2ZTE0eWdxeGhsbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/jtvED7ZmtCVyE3xzC2/giphy.gif" width = 80px>  </picture> Uso
 <br><br>
 
 
