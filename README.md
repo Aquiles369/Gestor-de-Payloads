@@ -19,7 +19,7 @@ Permite crear categorías personalizadas (XSS, IDOR, RCE, etc.), agregar renglon
 <br><br> 
 
 <p align="center">
- <img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/iconos/blob/main/demo_colab.gif"/>
+ <img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/iconos/blob/main/demo_tool_gestor_paylodad.mp4"/>
 </p>
 
 <br>
@@ -30,7 +30,7 @@ Permite crear categorías personalizadas (XSS, IDOR, RCE, etc.), agregar renglon
 ### <picture> <img src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTluamxsZ29hbTV2Zmw0OWNwN2cxMHI4azl1YTBvemYybW80eHRlZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/hvSd2YvTdBlniSJ8tA/giphy.gif" width = 80px>  </picture> Resumen rápido
 <br><br>
 
-Tool offline en el navegador para gestionar payloads de bug bounty. Sin instalar nada: abrís el HTML y ya podés crear, editar o eliminar categorías, agregar renglones con payloads, asignar estados (muy bueno/bueno/medio/débil), filtrar, anotar y copiar. Todo queda guardado en localStorage; también podés exportar/importar JSON o resetear,el contenido se escapa en tooltips, no se ejecuta nada; mantené siempre el escape al mostrar notas y payloads.<br>
+Tool offline en el navegador para gestionar payloads de bug bounty. Sin instalar nada: abrís el HTML y ya podés crear, editar o eliminar categorías, agregar renglones con payloads, asignar estados (muy bueno/bueno/medio/débil), filtrar, anotar y copiar. Todo queda guardado en localStorage; también podés exportar/importar JSON o resetear,el contenido se escapa en tooltips, no se ejecuta nada mantiene siempre el escape al mostrar notas y payloads.<br>
 
 
 • Formato: interfaz web local (HTML/JS), toda la data se guarda en localStorage por defecto (offline, en tu máquina).<br><br>
