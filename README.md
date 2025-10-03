@@ -42,7 +42,7 @@ Tool offline en el navegador para gestionar payloads de bug bounty. Sin instalar
 ### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWVleDk0Y3lmdmN1eWU3eWowNGsyaGlpbHQwbTM0aDNia21qbjNpayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/S3caeWZviAaDtzmU7X/giphy.gif" width = 80px>  </picture> Características
 <br><br>
 
-Categorías dinámicas:
+- Categorías dinámicas
 
 • Crear, renombrar y eliminar categorías.
 
@@ -51,8 +51,8 @@ Categorías dinámicas:
 • Cada categoría trae su filtro propio: todos, sin etiqueta, muy bueno, bueno, medio, débil. <br><br><br>
 
 
-Gestión de payloads (renglones):
-Cada renglón tiene:<br>
+- Gestión de payloads (renglones)
+- Cada renglón tiene<br>
 
 • Título editable (Nuevo payload por defecto).
 
@@ -67,7 +67,7 @@ Cada renglón tiene:<br>
 • Botón Borrar para eliminar el payload.<br><br><br>
 
 
-Funciones por categoría
+- Funciones por categoría
 
 • Agregar renglón.
 
@@ -81,7 +81,7 @@ Funciones por categoría
 
 
 
-Buscador global
+- Buscador global
 
 • Panel lateral fijo.
 
@@ -92,7 +92,7 @@ Buscador global
 
 
 
-Botonera de control (fija en pantalla)
+- Botonera de control (fija en pantalla)
 
 • + Agregar categoría.
 
@@ -105,7 +105,7 @@ Botonera de control (fija en pantalla)
 
 
 
-Persistencia local
+- Persistencia local
 
 • Todo se guarda automáticamente en localStorage.
 
@@ -113,7 +113,7 @@ Persistencia local
 
 
 
-Interfaz visual
+- Interfaz visual
 
 • Fondo oscuro con gradientes.
 
@@ -121,7 +121,7 @@ Interfaz visual
 
 
 
-Estados representados por colores claros:
+- Estados representados por colores claros:
 
 • Verde = Muy bueno
 
