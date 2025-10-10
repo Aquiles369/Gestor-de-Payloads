@@ -24,6 +24,24 @@ Permite crear categorías personalizadas (XSS, IDOR, RCE, etc.), agregar renglon
 
 <br>
 
+
+### <picture> <img src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ29jMnN4ZTVncjhjemxzbTBweTVsdGM3MWY3bmc4MGVsZ2plZ2t5eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/YARSS5UwRLZtcQHXzp/giphy.gif" width = 75px>  </picture> Problema que resuelve<br><br>
+**En bug bounty y auditorías web, mantener organizado un gran volumen de payloads es un dolor constante: se terminan dispersos en archivos sueltos, notas desordenadas, hojas de texto difíciles de buscar o directamente se pierden con el tiempo. Además, muchas veces necesitás clasificarlos por efectividad, añadir observaciones, copiarlos rápido o filtrarlos según el tipo de ataque… y ninguna herramienta lo hace fácil sin depender de servicios externos o bases de datos.<br><br>
+• Este gestor elimina ese caos ofreciendo un entorno totalmente offline, sencillo y visual, donde podés crear categorías personalizadas, organizar tus payloads, clasificarlos por nivel de efectividad, tomar notas, filtrarlos, buscarlos al instante y exportarlos o importarlos sin complicaciones.</a>.** 
+
+<br>
+
+### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnExbjVwcW51dnE0bGs5MjZ6eW13Z3cxOW1nb2VrNWhnMjk4Y3J6dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/3M01r0QQdz0CvLLbu1/giphy.gif" width = 75px>  </picture> Qué aporta y cómo beneficia <br><br>
+**• Organización profesional de tu arsenal: permite crear, renombrar y eliminar categorías personalizadas (XSS, IDOR, RCE, etc.), agregando payloads dentro de cada una con estados de efectividad claros (muy bueno, bueno, medio, débil), lo que te da una estructura limpia y ordenada de tu contenido ofensivo.<br><br>
+• Búsqueda y filtrado instantáneo: el buscador global permite localizar payloads por nombre, contenido, nota o categoría en segundos, y los filtros por estado te ayudan a concentrarte en los más útiles según el contexto del ataque.<br><br>
+• Documentación táctica sin esfuerzo: cada payload admite notas con información contextual, fecha de última edición y vista previa, para que nunca pierdas el “por qué” o el “cómo” de cada técnica.<br><br>
+• Productividad y velocidad: podés copiar un payload individual o todos los de una categoría al instante, exportar tu arsenal completo como JSON o resetear todo con un clic. Esto acelera tu flujo de trabajo y te permite reutilizar tu base en cualquier entorno o laboratorio.<br><br>
+• Uso offline y sin dependencias: todo funciona desde tu navegador con localStorage, sin necesidad de backend ni instalación, ideal para entornos aislados, laboratorios locales o situaciones donde la privacidad es prioritaria.<br><br>
+• Más enfoque en la explotación: al tener todo tu arsenal organizado, clasificado y accesible desde un solo lugar, eliminás el tiempo perdido buscando en archivos sueltos y podés concentrarte en lo que importa: crear, probar y mejorar tus payloads en el menor tiempo posible.</a>.** 
+
+<br>
+
+
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
