@@ -23,7 +23,8 @@ Permite crear categorías personalizadas (XSS, IDOR, RCE, etc.), agregar renglon
 </p>
 
 <br>
-
+<picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
+<br>
 
 ### <picture> <img src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ29jMnN4ZTVncjhjemxzbTBweTVsdGM3MWY3bmc4MGVsZ2plZ2t5eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/YARSS5UwRLZtcQHXzp/giphy.gif" width = 75px>  </picture> Problema que resuelve<br><br>
 **En bug bounty y auditorías web, mantener organizado un gran volumen de payloads es un dolor constante: se terminan dispersos en archivos sueltos, notas desordenadas, hojas de texto difíciles de buscar o directamente se pierden con el tiempo. Además, muchas veces necesitás clasificarlos por efectividad, añadir observaciones, copiarlos rápido o filtrarlos según el tipo de ataque… y ninguna herramienta lo hace fácil sin depender de servicios externos o bases de datos.<br><br>
