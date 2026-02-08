@@ -14,7 +14,7 @@
 
 <br>
 
- **Repositorio de Payloads — gestor offline con filtros y notas. Una tool offline para gestionar payloads de bug bounty.
+ **Repositorio de Payloads,  gestor offline con filtros y notas. Una tool offline para gestionar payloads de bug bounty.
 Permite crear categorías personalizadas (XSS, IDOR, RCE, etc.), agregar renglones con payloads, asignarles un estado (muy bueno, bueno, medio, débil), añadir notas con tooltip, copiar ítems o listas completas y buscar en todo el repositorio. Todo queda guardado en localStorage, con funciones para exportar/importar JSON y borrar todo,<a href="https://youtu.be/dN1YjkjBx0w" target="_blank" rel="noopener">demo de la tool Youtube</a>.** 
 <br><br> 
 
@@ -175,7 +175,7 @@ Tool offline en el navegador para gestionar payloads de bug bounty. Sin instalar
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
-### <picture> <img src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3YwbG9zbmU1amprdTJsbmxzYnpobzd5eGtnazB6b2FmdnllaTRhZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/h8UlsEpqiCISTKUzvz/giphy.gif" width = 80px>  </picture> "Gestor de Payloads — organiza, filtra y copia. Tu arsenal de bug bounty, offline y al instante."
+### <picture> <img src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3YwbG9zbmU1amprdTJsbmxzYnpobzd5eGtnazB6b2FmdnllaTRhZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/h8UlsEpqiCISTKUzvz/giphy.gif" width = 80px>  </picture> "Gestor de Payloads, organiza, filtra y copia. Tu arsenal de bug bounty, offline y al instante."
 <br>
 
 
