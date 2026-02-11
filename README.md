@@ -15,7 +15,7 @@
 <br>
 
  **Repositorio de Payloads,  gestor offline con filtros y notas. Una tool offline para gestionar payloads de bug bounty.
-Permite crear categorías personalizadas (XSS, IDOR, RCE, etc.), agregar renglones con payloads, asignarles un estado (muy bueno, bueno, medio, débil), añadir notas con tooltip, copiar ítems o listas completas y buscar en todo el repositorio. Todo queda guardado en localStorage, con funciones para exportar/importar JSON y borrar todo,<a href="https://youtu.be/dN1YjkjBx0w" target="_blank" rel="noopener">demo de la tool Youtube</a>.** 
+Permite crear categorías personalizadas (XSS, IDOR, RCE, etc.), agregar renglones con payloads, asignarles un estado (muy bueno, bueno, medio, débil), añadir notas con tooltip, copiar ítems o listas completas y buscar en todo el repositorio. Todo queda guardado en localStorage, con funciones para exportar/importar JSON y borrar todo, <a href="https://youtu.be/dN1YjkjBx0w" target="_blank" rel="noopener">demo de la tool Youtube</a>.** 
 <br><br> 
 
 <p align="center">
